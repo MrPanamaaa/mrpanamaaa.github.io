@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AbuseIPDB Contributor Badge</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: system-ui, -apple-system, sans-serif;
+    background: linear-gradient(
+      135deg,
+      #0b0f1a 0%,
+      #101a33 25%,
+      #1b2a5e 50%,
+      #2b1b4d 75%,
+      #0b0f1a 100%
+    );
+    background-size: 200% 200%;
+    animation: gradientShift 18s ease infinite;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Плавающие светящиеся пятна для "стиля" */
+  body::before,
+  body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::before {
+    width: 520px;
+    height: 520px;
+    background: #2563eb;
+    top: -160px;
+    left: -160px;
+    animation: floatA 14s ease-in-out infinite;
+  }
+
+  body::after {
+    width: 480px;
+    height: 480px;
+    background: #a855f7;
+    bottom: -160px;
+    right: -160px;
+    animation: floatB 16s ease-in-out infinite;
+  }
+
+  .badge {
+    display: inline-block;
+    line-height: 0;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+    border-radius: 14px;
+    transition: transform 0.25s ease, filter 0.25s ease;
+  }
+
+  .badge img {
+    display: block;
+    width: 802px;
+    max-width: 100%;
+    height: auto;
+    border: 0;
+    border-radius: 14px;
+  }
+
+  .badge:hover {
+    transform: translateY(-3px) scale(1.01);
+    filter: drop-shadow(0 10px 30px rgba(59, 130, 246, 0.45));
+  }
+
+  @keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes floatA {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(80px, 60px); }
+  }
+
+  @keyframes floatB {
+    0%, 100% { transform: translate(0, 0); }
+    50%      { transform: translate(-70px, -50px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body, body::before, body::after { animation: none; }
+  }
+</style>
+</head>
+<body>
+  <a class="badge"
+     href="https://www.abuseipdb.com/user/361940"
+     title="AbuseIPDB is an IP address blacklist for webmasters and sysadmins to report IP addresses engaging in abusive behavior on their networks">
+    <img src="https://www.abuseipdb.com/contributor/361940.svg?theme=dark"
+         alt="AbuseIPDB Contributor Badge"
+         width="802">
+  </a>
+</body>
+</html>
